@@ -1,42 +1,44 @@
-let form = document.querySelector('form')
-let email = document.querySelector('.email')
-let password = document.querySelector('.password')
-let msgValidationError = document.querySelectorAll('.msgValidation-error')
-let msgValidationSuccess = document.querySelectorAll('.msgValidation-success')
-let errorMessage = document.querySelectorAll('.error-message')
-let smallSuccess = document.querySelectorAll('.success-message')
-let inputemail = document.getElementById('email')
-let inputpassword = document.getElementById('password')
+const form = document.querySelector('form')
+const email = document.getElementById('email')
+const spanEmail = email.nextElementSibling
+const password = document.getElementById('password')
+const spanPassword = password.nextElementSibling
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit',(e) => {
   e.preventDefault()
-
   validation()
 })
 
-function validation() {
-  if(inputemail.value.trim() === '') {
-    msgValidationError[0].previousElementSibling.style.borderColor = "#dc3545"
-    msgValidationError[0].style.visibility = "visible"
-    msgValidationSuccess[0].style.visibility = "hidden"
-    errorMessage[0].innerText = 'Preencha este campo'
-  } else if(inputemail.value.trim() !== ''){
-    msgValidationError[0].previousElementSibling.style.borderColor = "#198754"
-    msgValidationError[0].style.visibility = "hidden"
-    msgValidationSuccess[0].style.visibility = "visible"
-    smallSuccess[0].innerText = 'Tudo certo por aqui'
-  } 
+function validation(){
+  if(email.value.trim() === ''){
+    email.classList.remove('img-success')
+    spanEmail.classList.remove('span-success')
 
-  if(inputpassword.value.trim() === '') {
-    msgValidationError[1].previousElementSibling.style.borderColor = "#dc3545"
-    msgValidationError[1].style.visibility = "visible"
-    msgValidationSuccess[1].style.visibility = "hidden"
-    errorMessage[1].innerText = 'Preencha este campo'
-  } else if(inputpassword.value.trim() !== ''){
-    msgValidationError[1].previousElementSibling.style.borderColor = "#198754"
-    msgValidationError[1].style.visibility = "hidden"
-    msgValidationSuccess[1].style.visibility = "visible"
-    smallSuccess[1].innerText = 'Tudo certo por aqui'
-  }  
+    email.classList.add('img-error')
+    spanEmail.classList.add('span-error')
+    spanEmail.innerHTML = ('<small>Preencha este campo</small>')
+  } else if(true) {
+    email.classList.remove('img-error')
+    spanEmail.classList.remove('span-error')
 
+    email.classList.add('img-success')
+    spanEmail.classList.add('span-success')
+    spanEmail.innerHTML = ('<small>Tudo certo por aqui</small>')
+  }
+  
+  if(password.value.trim() === ''){
+    password.classList.remove('img-success')
+    spanPassword.classList.remove('span-success')
+
+    password.classList.add('img-error')
+    spanPassword.classList.add('span-error')
+    spanPassword.innerHTML = ('<small>Preencha este campo</small>')
+  } else if(true) {
+    password.classList.remove('img-error')
+    spanPassword.classList.remove('span-error')
+
+    password.classList.add('img-success')
+    spanPassword.classList.add('span-success')
+    spanPassword.innerHTML = ('<small>Tudo certo por aqui</small>')
+  }
 }

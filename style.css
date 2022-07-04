@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(197, 196, 196);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -28,7 +28,7 @@ main {
   width: 90%;
   max-width: 27rem;
   height: 27.5rem; 
-  background-color: white;
+  background-color: #fff;
 
   display: flex;
   flex-direction: column;
@@ -41,9 +41,9 @@ header {
   border-top-right-radius: 0.3rem;
 
   background-color: #00455a;
-  color: white;
+  color: grey;
 
-  height: 26.3%;
+  height: 7.2rem;
 
   display: flex;
   flex-direction: column;
@@ -53,33 +53,26 @@ header {
 }
 
 .titles {
-  margin-inline: auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 3rem;
-}
-
-h2 {
-  font-size: 1.15rem;
   margin-top: .2rem;
 }
-.titles p {
+
+header .titles h2 {
+  font-size: 1.15rem;
+  color: #fff;
+}
+header .titles p {
   font-size: 0.85rem;
   display: flex;
   justify-content: center;
-  color: grey;
-  margin-top: .2rem;
 }
 
-/*=== image ================*/
 .image {
-  border-bottom: 3px solid #31b7bc;
   border-radius: 50%;
+  border-bottom: 3px solid #31b7bc;
   background-color: white;
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 1.7rem;
   padding: 0.8rem;
 }
 
@@ -93,7 +86,6 @@ img {
 .container {
   padding-inline: 2.5rem;
   padding-bottom: 2rem;
-
   height: 17.5rem;
 }
 
@@ -104,46 +96,54 @@ form {
   justify-content: space-between;
 }
 
-form div {
+form .email, form .password, form .checkbox{
   display: flex;
   flex-direction: column;
-  height: 4.5rem;
+  color: gray;
   position: relative;
 }
 
-form div.checkbox {
+form .email {
+  height: 4.5rem;
+}
+
+form .password {
+  height: 5rem;
+}
+
+form .checkbox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 2rem;
-  color: grey;
 }
 
-form div.password {
-  height: 5rem;
-}
-
+/*=== labels ====*/
 .email label, .password label {
   margin-bottom: 1rem;
-  color: grey;
 }
 
 .password label {
   margin-top: 0.5rem;
 }
 
-#password, #email {
-  height: 100%;
+/*=== inputs ====*/
+.img {
   border: 1px solid gray;
   border-radius: .3rem;
-
+  height: 3rem;
   padding-inline: 15px;
+
+  background-repeat: no-repeat;
+  background-position: 98%;
+  background-size: 1rem;
 }
 
 #password:focus, #email:focus {
   outline: gray;
 }
 
+/*=== button ====*/
 button {
   border: none;
   border-radius: .3rem;
@@ -153,41 +153,37 @@ button {
   font-size: 1rem;
 }
 
-/*=== msg-validation-error-and-sucsess =========*/
-.msgValidation-error, .msgValidation-success {
+/*=== validation-img===========*/
+.img-success {
+  background-image: url(imgs/success.svg);
+  border: 1px solid #198754;
+}
+
+.img-error {
+  background-image: url(imgs/error.svg);
+  border: 1px solid #dc3245;
+}
+
+
+/*=== validation-span =====*/
+span {
+  position: absolute;
+  top: 4.8rem;
   visibility: hidden;
 }
 
-.error-message {
-  color: #dc3545;
+.span2 {
+  margin-top: .5rem;
 }
 
-.success-message {
+.span-error {
+  color: #dc3245;
+  visibility: visible;
+}
+
+.span-success {
   color: #198754;
-}
-
-.email .msgValidation-error, .email .msgValidation-success {
-  position: absolute;
-  top: 4.8rem;
-}
-
-.password .msgValidation-error, .password .msgValidation-success {
-  position: absolute;
-  top: 5.3rem;
-}
-
-.error-image {
-  position: absolute;
-  bottom: 120%;
-  left: 250%;
-  width: 1rem;
-}
-
-.success-image {
-  position: absolute;
-  bottom: 120%;
-  left: 283%;
-  width: 1rem;
+  visibility: visible;
 }
 
 /*=== media ================*/
@@ -216,11 +212,22 @@ button {
     flex-direction: column;
     align-items: center;
     height: 5rem;
+    margin-top: 1rem;
   }
 
   button {
     height: 3rem;
     width: 10rem;
+  }
+
+  /*=== span =====*/
+  span, span2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #email, #password {
+   text-align: center;
   }
 
 }

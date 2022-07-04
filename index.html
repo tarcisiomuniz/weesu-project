@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weesu</title>
+    <title>Weesu Login</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -26,41 +26,26 @@
       <div class="container">
         <form>
 
+          <!--===email===-->
           <div class="email">
             <label for="email">E-mail</label>
-            <input id="email" type="email">
-            <!--=== error ======-->
-            <div class="msgValidation-error">
-              <small class="error-message">Error message</small>
-              <img class="error-image" src="imgs/error.svg" alt="">
-            </div>
-            <!--=== success ======-->
-            <div class="msgValidation-success">
-              <small class="success-message">Success message</small>
-              <img style="background-color: transparent;" class="success-image" src="imgs/success.svg" alt="">
-            </div>
+            <input autofocus class="img img" id="email" type="email">
+            <span class="span">Message Error</span>
           </div>
           
+          <!--===password===-->
           <div class="password">
             <label for="password">Senha</label>
-            <input id="password" type="password">
-            <!--=== error ======-->
-            <div class="msgValidation-error">
-              <small class="error-message">Error message</small>
-              <img class="error-image" src="imgs/error.svg" alt="">
-            </div>
-            <!--=== success ======-->
-            <div class="msgValidation-success">
-              <small class="success-message">Success message</small>
-              <img style="background-color: transparent;" class="success-image" src="imgs/success.svg" alt="">
-            </div>
+            <input class="img" id="password" type="password">
+            <span class="span2">Message Error</span>
           </div>
-          
+
+          <!--=== checkbox =====-->
           <div class="checkbox">
-            <span>
+            <div>
               <input id="checkbox" type="checkbox">
               <label for="checkbox">Lembrar de mim</label>
-            </span>
+            </div>
 
             <button type="submit">Entrar</button>
           </div>
