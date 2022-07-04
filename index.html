@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weesu</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+
+      <!--=== header ===========-->
+      <header>
+        <div class="titles">
+          <h2>Olá, bem-vindo de volta!</h2>
+          <p>Informe seus dados de acesso:</p>
+        </div>
+
+        <div class="image">
+          <img src="imgs/icone-weesu.ico" alt="Logo da Weesu">
+        </div>
+      </header>
+
+      <!--=== container form-->
+      <div class="container">
+        <form>
+
+          <div class="email">
+            <label for="email">E-mail</label>
+            <input id="email" type="email">
+            <!--=== error ======-->
+            <div class="msgValidation-error">
+              <small class="error-message">Error message</small>
+              <img class="error-image" src="imgs/error.svg" alt="">
+            </div>
+            <!--=== success ======-->
+            <div class="msgValidation-success">
+              <small class="success-message">Success message</small>
+              <img style="background-color: transparent;" class="success-image" src="imgs/success.svg" alt="">
+            </div>
+          </div>
+          
+          <div class="password">
+            <label for="password">Senha</label>
+            <input id="password" type="password">
+            <!--=== error ======-->
+            <div class="msgValidation-error">
+              <small class="error-message">Error message</small>
+              <img class="error-image" src="imgs/error.svg" alt="">
+            </div>
+            <!--=== success ======-->
+            <div class="msgValidation-success">
+              <small class="success-message">Success message</small>
+              <img style="background-color: transparent;" class="success-image" src="imgs/success.svg" alt="">
+            </div>
+          </div>
+          
+          <div class="checkbox">
+            <span>
+              <input id="checkbox" type="checkbox">
+              <label for="checkbox">Lembrar de mim</label>
+            </span>
+
+            <button type="submit">Entrar</button>
+          </div>
+
+        </form>
+      </div>
+
+    </main>
+  </body>
+  <script src="style.js"></script>
+</html>
